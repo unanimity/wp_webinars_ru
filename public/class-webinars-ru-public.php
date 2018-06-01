@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/public
+ * @package    Webinars_Ru
+ * @subpackage Webinars_Ru/public
  */
 
 /**
@@ -16,11 +16,11 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/public
+ * @package    Webinars_Ru
+ * @subpackage Webinars_Ru/public
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Public {
+class Webinars_Ru_Public {
 
 	/**
 	 * The ID of this plugin.

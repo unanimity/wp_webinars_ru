@@ -6,8 +6,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/admin
+ * @package    Webinars_RU
+ * @subpackage Webinars_RU/admin
  */
 
 /**
@@ -16,18 +16,18 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/admin
- * @author     Your Name <email@example.com>
+ * @package    Webinars_RU
+ * @subpackage Webinars_RU/admin
+ * @author     Sergei Kharlamov unanimity@list.ru
  */
-class Plugin_Name_Admin {
+class Webinars_RU_Admin {
 
 	/**
 	 * The ID of this plugin.
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
+	 * @var      string    $webinars_ru    The ID of this plugin.
 	 */
 	private $plugin_name;
 
@@ -44,7 +44,7 @@ class Plugin_Name_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
+	 * @param      string    $webinars_ru       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
@@ -100,4 +100,11 @@ class Plugin_Name_Admin {
 
 	}
 
+}
+
+
+add_action('admin_menu', 'add_web_ru_plugin_page');
+
+function add_web_ru_plugin_page(){
+	add_options_page( 'Настройки Webinars_ru', 'Webinars_ru', 'manage_options', 'primer_slug', 'primer_options_page_output' );
 }
