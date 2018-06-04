@@ -103,8 +103,27 @@ class Webinars_RU_Admin {
 }
 
 
-add_action('admin_menu', 'add_web_ru_plugin_page');
+add_action('admin_menu', 'add_webinars_ru_plugin_page');
 
-function add_web_ru_plugin_page(){
-	add_options_page( 'Настройки Webinars_ru', 'Webinars_ru', 'manage_options', 'primer_slug', 'primer_options_page_output' );
+function add_webinars_ru_plugin_page(){
+	add_options_page( 'Настройки Webinars_ru', 'Webinars Ru', 'manage_options', 'webinars_ru_slug', 'webinars_ru_options_page_output' );
+}
+function webinars_ru_options_page_output(){
+     ?>
+
+
+    <form action="" id="ajax_form" style=" margin:14px;">
+            <label for="visitor_name"><h3>Запустить автоматическую простановку ссылок (полный цикл)?</h3></label>
+            <button type="button" name="autolink_submit_form" id="autolink_submit_form"  class="btn btn-dark">Запустить</button>
+    </form>
+    
+
+
+    <script>
+
+    </script>
+    <!-- The result of the search will be rendered inside this div -->
+ 
+    <?php
+ 
 }
