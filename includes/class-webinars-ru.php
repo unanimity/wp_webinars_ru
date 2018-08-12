@@ -122,8 +122,30 @@ class Webinars_Ru {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-webinars-ru-public.php';
 
-		$this->loader = new Webinars_Ru_Loader();
 
+
+	
+ 
+	    $this->loader = new Webinars_Ru_Loader();
+ 
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-webinars-ru-custom-woocommerce-field.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-webinars-ru-custom-woocommerce-display.php';
+	    
+	 
+          
+        add_action( 'plugins_loaded', 'webinars_ru_wc_input_start' );
+        function webinars_ru_wc_input_start() {
+         echo "Step 0";
+            if ( is_admin() ) {
+         
+                $admin = new Webinars_Ru_Custom_WooCommerce_Field( 'webinars_ru_text_field' );
+                $admin->init();
+            } else {
+         
+                $plugin = new Webinars_Ru_Custom_WooCommerce_Display( 'webinars_ru_text_field' );
+                $plugin->init();
+            }
+        }
 	}
 
 	/**
@@ -168,7 +190,7 @@ class Webinars_Ru {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Webinars_Ru_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );

@@ -26,9 +26,7 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+if ( ! defined( 'WPINC' ) ) {die;}
 
 /**
  * Currently plugin version.
@@ -58,6 +56,7 @@ function deactivate_webinars_ru() {
 register_activation_hook( __FILE__, 'activate_webinars_ru' );
 register_deactivation_hook( __FILE__, 'deactivate_webinars_ru' );
 
+
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
@@ -73,6 +72,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-webinars-ru.php';
  *
  * @since    1.0.0
  */
+
+ 
+ 
+ 
 function run_webinars_ru() {
 
 	$plugin = new Webinars_Ru();
